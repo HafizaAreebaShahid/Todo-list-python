@@ -8,7 +8,7 @@ def load_tasks():
         return [line.strip() for line in file if line.strip()]
     
 def save_tasks(tasks):
-        with open(FILE_NAME, "w") as file:
-            for task in tasks:
-                file.write(task + "\n")
+    with open(FILE_NAME, "w") as file:
+         for task in tasks:
+            file.write(task + "\n")
 
