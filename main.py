@@ -33,3 +33,18 @@ def add_task(tasks):
         print("Task added.")
     else:
         print("Task cannot be empty.")
+def delete_task(tasks):
+    if not tasks:
+        print("\nNo tasks to delete.")
+        return
+    show_tasks(tasks)
+    try:
+        number = int(input("Enter task number to delete: "))
+        if 1 <= number <= len(tasks):
+            removed = tasks.pop(number - 1)
+            save_tasks(tasks)
+            print(f"Deleted: {removed}")
+        else:
+            print("Task number does not exist.")
+    except ValueError:
+        print("Please enter a valid number.")
